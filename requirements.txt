@@ -1,0 +1,3 @@
+pandas==2.2.2
+numpy
+kafka-python==2.0.2
