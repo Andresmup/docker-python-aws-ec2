@@ -1,4 +1,4 @@
 pandas==2.2.2
 numpy
 git+https://github.com/dpkp/kafka-python.git
-aws_msk_iam_sasl_signer
+aws-msk-iam-sasl-signer-python
