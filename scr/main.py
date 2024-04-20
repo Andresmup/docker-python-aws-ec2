@@ -32,7 +32,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     topic = args.topic or os.environ.get('KAFKA_TOPIC')
-    bootstrap_servers = args.bootstrap_servers or os.environ.get('KAFKA_BOOTSTRAP_SERVERS')
+    servers = args.bootstrap_servers or os.environ.get('KAFKA_BOOTSTRAP_SERVERS')
+    bootstrap_servers = servers.split(',')
+
     n_samples = args.n_samples or os.environ.get('N_SAMPLES')
 
     main(topic, bootstrap_servers, n_samples)
