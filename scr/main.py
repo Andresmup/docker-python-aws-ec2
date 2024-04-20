@@ -6,7 +6,7 @@ from kafka import KafkaProducer
 import argparse
 
 def main(topic, bootstrap_servers,n_samples):
-    producer = KafkaProducer(bootstrap_servers=bootstrap_servers)
+    producer = KafkaProducer(security_protocol="SSL", bootstrap_servers=bootstrap_servers)
 
     df_ecommerce_sale_report = pd.read_csv("https://raw.githubusercontent.com/Andresmup/ArchivosDataScience/main/ecommerce_sale_report.csv", index_col="index", low_memory=False)
     df_ecommerce_sample = df_ecommerce_sale_report.sample(n=n_samples, random_state=44)
